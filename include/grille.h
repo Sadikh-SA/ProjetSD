@@ -19,7 +19,7 @@ typedef struct
 {
 	int nbl; /*!< Entier représentant le nombre de lignes que contient la grille. */
 	int nbc; /*!< Entier représentant le nombre de colonnes que contient la grille. */
-	int nbh; /*!< Entier représentant le nombre de haiteur que contient la grille. */
+	int nbh; /*!< Entier représentant le nombre de hauteur que contient la grille. */
 	int** cellules; /*!< Pointeur d'un pointeur sur un tableau à deux entrées contenant une valeur pour chaque case de la grille */
 } grille;
 
@@ -70,7 +70,7 @@ static inline void set_vivante(int i, int j, int k, grille g) { g.cellules[i][j]
  * \param j Entier représentant le numéro de la colonne de la cellule
  * \param g Grille concernée
  */
-static inline void set_morte(int i, int j, grille g) { g.cellules[i][j] = 0; }
+static inline void set_morte(int i, int j, int k, grille g) { g.cellules[i][j] = 0; }
 
 /**
  * Rend non-viable la cellule (i,j) de la grille g

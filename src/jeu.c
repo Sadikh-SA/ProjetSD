@@ -41,7 +41,7 @@ void evolue(grille* g, grille* gc, int (*compte_voisins_vivants)(int, int, int, 
 	{
 		for (j = 0; j < c; ++j)
 		{
-			for (k = 0; k < h; ++j)
+			for (k = 0; k < h; ++k)
 			{
 
 				if (est_non_viable(i, j, k, *g))
@@ -53,7 +53,7 @@ void evolue(grille* g, grille* gc, int (*compte_voisins_vivants)(int, int, int, 
 					// evolution d'une cellule vivante
 					if (v != 2 && v != 3)
 					{
-						set_morte(i, j, *g);
+						set_morte(i, j, k, *g);
 					}
 					// si cellule non morte et vieillissement activé, alors augmenter l'âge de la cellule
 					else if(vieillissement)
@@ -61,7 +61,7 @@ void evolue(grille* g, grille* gc, int (*compte_voisins_vivants)(int, int, int, 
 						g->cellules[i][j]++;
 
 						//Une cellule meurt de viellesse quand son âge dépasse 8 pas de temps.
-						if(g->cellules[i][j] > 8) set_morte(i, j, *g);
+						if(g->cellules[i][j] > 8) set_morte(i, j, k, *g);
 
 					} else {
 						// si vieillissement désactivé remettre à 1 (vivante)

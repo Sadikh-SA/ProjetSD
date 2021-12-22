@@ -24,6 +24,7 @@ void affiche_grille(grille g, int tempsEvolution, int voisinageCyclique, int vie
 {
 	const int l = g.nbl;
 	const int c = g.nbc;
+	const int h = g.nbh;
 	char* cycliqueStr = voisinageCyclique ? "Activé" : "Désactivé";
 	char* vieillissementStr = vieillissement ? "Activé" : "Désactivé";
 	printf("\n");
