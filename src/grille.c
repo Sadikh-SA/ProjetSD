@@ -55,7 +55,7 @@ void alloue_grille(int l, int c, int h, grille* g)
 	for (int i = 0; i < l; ++i)
 	{
 		g->cellules[i] = (int*)malloc(sizeof(int*) * c);
-		for (int j = 0; j < c; ++j) set_morte(i, j, *g);
+		for (int j = 0; j < c; ++j) set_morte(i, j, i, *g);
 	}
 }
 
